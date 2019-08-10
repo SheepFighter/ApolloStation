@@ -107,15 +107,15 @@
 
 	Topic(href,href_list)
 		..()
-		var/datum/topic_input/filter = new /datum/topic_input(href,href_list)
-		if(filter.get("eject"))
+		var/datum/topic_input/_filter = new /datum/topic_input(href,href_list)
+		if(_filter.get("eject"))
 			go_out()
-		if(filter.get("view_stats"))
+		if(_filter.get("view_stats"))
 			chassis.occupant << browse(get_occupant_stats(),"window=msleeper")
 			onclose(chassis.occupant, "msleeper")
 			return
-		if(filter.get("inject"))
-			inject_reagent(filter.getType("inject",/datum/reagent),filter.getObj("source"))
+		if(_filter.get("inject"))
+			inject_reagent(_filter.getType("inject",/datum/reagent),_filter.getObj("source"))
 		return
 
 	proc/get_occupant_stats()
@@ -480,19 +480,19 @@
 
 	Topic(href,href_list)
 		..()
-		var/datum/topic_input/filter = new (href,href_list)
-		if(filter.get("toggle_mode"))
+		var/datum/topic_input/_filter = new (href,href_list)
+		if(_filter.get("toggle_mode"))
 			mode = !mode
 			update_equip_info()
 			return
-		if(filter.get("select_reagents"))
+		if(_filter.get("select_reagents"))
 			processed_reagents.len = 0
 			var/m = 0
 			var/message
 			for(var/i=1 to known_reagents.len)
 				if(m>=synth_speed)
 					break
-				var/reagent = filter.get("reagent_[i]")
+				var/reagent = _filter.get("reagent_[i]")
 				if(reagent && (reagent in known_reagents))
 					message = "[m ? ", " : null][known_reagents[reagent]]"
 					processed_reagents += reagent
@@ -504,14 +504,14 @@
 				occupant_message("Reagent processing started.")
 				log_message("Reagent processing started.")
 			return
-		if(filter.get("show_reagents"))
+		if(_filter.get("show_reagents"))
 			chassis.occupant << browse(get_reagents_page(),"window=msyringegun")
-		if(filter.get("purge_reagent"))
-			var/reagent = filter.get("purge_reagent")
+		if(_filter.get("purge_reagent"))
+			var/reagent = _filter.get("purge_reagent")
 			if(reagent)
 				reagents.del_reagent(reagent)
 			return
-		if(filter.get("purge_all"))
+		if(_filter.get("purge_all"))
 			reagents.clear_reagents()
 			return
 		return

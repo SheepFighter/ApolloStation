@@ -53,7 +53,7 @@ client
 							var vars_ol1 = document.getElementById("vars");
 							vars_ol1.innerHTML = complete_list
 						}
-						if(filter.value == ""){
+						if(_filter.value == ""){
 							return;
 						}else{
 							var vars_ol = document.getElementById('vars');

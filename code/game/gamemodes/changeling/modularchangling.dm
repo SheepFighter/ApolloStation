@@ -219,7 +219,7 @@ var/list/datum/power/changeling/powerinstances = list()
 						mtbl.innerHTML = complete_list;
 					}
 
-					if(filter.value == ""){
+					if(_filter.value == ""){
 						return;
 					}else{
 

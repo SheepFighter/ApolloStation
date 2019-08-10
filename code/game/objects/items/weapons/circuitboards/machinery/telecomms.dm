@@ -20,7 +20,7 @@
 	name = T_BOARD("hub mainframe")
 	build_path = "/obj/machinery/telecomms/hub"
 	origin_tech = "programming=4;engineering=4"
-	frame_desc = "Requires 2 Micro Manipulators, 2 Cable Coil and 2 Hyperwave Filter."
+	frame_desc = "Requires 2 Micro Manipulators, 2 Cable Coil and 2 Hyperwave filter."
 	req_components = list(
 							"/obj/item/weapon/stock_parts/manipulator" = 2,
 							"/obj/item/stack/cable_coil" = 2,
@@ -40,7 +40,7 @@
 	name = T_BOARD("bus mainframe")
 	build_path = "/obj/machinery/telecomms/bus"
 	origin_tech = "programming=4;engineering=4"
-	frame_desc = "Requires 2 Micro Manipulators, 1 Cable Coil and 1 Hyperwave Filter."
+	frame_desc = "Requires 2 Micro Manipulators, 1 Cable Coil and 1 Hyperwave filter."
 	req_components = list(
 							"/obj/item/weapon/stock_parts/manipulator" = 2,
 							"/obj/item/stack/cable_coil" = 1,
@@ -63,7 +63,7 @@
 	name = T_BOARD("telecommunication server")
 	build_path = "/obj/machinery/telecomms/server"
 	origin_tech = "programming=4;engineering=4"
-	frame_desc = "Requires 2 Micro Manipulators, 1 Cable Coil and 1 Hyperwave Filter."
+	frame_desc = "Requires 2 Micro Manipulators, 1 Cable Coil and 1 Hyperwave filter."
 	req_components = list(
 							"/obj/item/weapon/stock_parts/manipulator" = 2,
 							"/obj/item/stack/cable_coil" = 1,
